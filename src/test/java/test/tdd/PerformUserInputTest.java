@@ -106,7 +106,7 @@ class PerformUserInputTest {
         Equipment resultedEquipment = PerformUserInput.removeLetterFromAlphabet(basicEquipment, userInput);
 
         ArrayList<Character> expectedAlphabet = new ArrayList<>(basicEquipment.alphabet);
-        expectedAlphabet.set(18, '_');
+        expectedAlphabet.set(17, '_');
 
         assert resultedEquipment != null;
         assertIterableEquals(expectedAlphabet, resultedEquipment.alphabet);
@@ -131,7 +131,6 @@ class PerformUserInputTest {
         Equipment resultedEquipment = PerformUserInput.removeLetterFromAlphabet(basicEquipment, userInput);
 
         ArrayList<Character> expectedAlphabet = new ArrayList<>(basicEquipment.alphabet);
-        expectedAlphabet.set(18, '_');
 
         assert resultedEquipment != null;
         assertEquals(expectedAlphabet, resultedEquipment.alphabet);
@@ -168,7 +167,7 @@ class PerformUserInputTest {
         basicEquipment.hiddenWord.add('к');
         basicEquipment.hiddenWord.add('а');
 
-        Character userInput = 'к';
+        Character userInput = 'м';
 
         for (int i = 0; i < basicEquipment.hiddenWord.size(); i++) basicEquipment.userWord.add('_');
 
