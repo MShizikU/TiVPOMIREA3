@@ -118,7 +118,7 @@ class PerformUserInputTest {
 
         Equipment resultedEquipment = PerformUserInput.removeLetterFromAlphabet(basicEquipment, userInput);
 
-        ArrayList<Character> expectedAlphabet = basicEquipment.alphabet;
+        ArrayList<Character> expectedAlphabet = new ArrayList<>(basicEquipment.alphabet);
 
         assert resultedEquipment != null;
         assertEquals(expectedAlphabet, resultedEquipment.alphabet);
@@ -130,7 +130,7 @@ class PerformUserInputTest {
 
         Equipment resultedEquipment = PerformUserInput.removeLetterFromAlphabet(basicEquipment, userInput);
 
-        ArrayList<Character> expectedAlphabet = basicEquipment.alphabet;
+        ArrayList<Character> expectedAlphabet = new ArrayList<>(basicEquipment.alphabet);
         expectedAlphabet.set(18, '_');
 
         assert resultedEquipment != null;
@@ -150,7 +150,7 @@ class PerformUserInputTest {
 
         for (int i = 0; i < basicEquipment.hiddenWord.size(); i++) basicEquipment.userWord.add('_');
 
-        ArrayList<Character> expected = basicEquipment.userWord;
+        ArrayList<Character> expected = new ArrayList<>(basicEquipment.userWord);
         expected.set(2, userInput);
 
         Equipment result = PerformUserInput.updateUserWord(basicEquipment, userInput);
@@ -172,7 +172,7 @@ class PerformUserInputTest {
 
         for (int i = 0; i < basicEquipment.hiddenWord.size(); i++) basicEquipment.userWord.add('_');
 
-        ArrayList<Character> expected = basicEquipment.userWord;
+        ArrayList<Character> expected = new ArrayList<>(basicEquipment.userWord);
         expected.set(2, userInput);
 
         Equipment result = PerformUserInput.updateUserWord(basicEquipment, userInput);
@@ -194,7 +194,7 @@ class PerformUserInputTest {
 
         for (int i = 0; i < basicEquipment.hiddenWord.size(); i++) basicEquipment.userWord.add('_');
 
-        ArrayList<Character> expected = basicEquipment.userWord;
+        ArrayList<Character> expected = new ArrayList<>(basicEquipment.userWord);
         expected.set(2, userInput);
 
         Equipment result = PerformUserInput.updateUserWord(basicEquipment, userInput);
