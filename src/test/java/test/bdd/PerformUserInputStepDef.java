@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.ru.Дано;
+import io.cucumber.java.ru.И;
 import io.cucumber.java.ru.Когда;
 import io.cucumber.java.ru.Тогда;
 import org.example.Equipment;
@@ -33,6 +34,14 @@ public class PerformUserInputStepDef {
 
         for (int i = 1072; i <= 1103; i++) equipment.alphabet.add( (char) i );
     }
+
+    @И("^алфавит (.*)")
+    public void createExistedAlphabet(String alphabet) {
+        equipment.alphabet = new ArrayList<>();
+
+        for (char c : alphabet.toCharArray()) equipment.alphabet.add(c);
+    }
+
 
     @Когда("^пользователь вводит букву (.)")
     public void givenInput(Character userInput){
