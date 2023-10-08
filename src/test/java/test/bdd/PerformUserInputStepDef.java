@@ -1,5 +1,6 @@
 package test.bdd;
 
+import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,6 +13,7 @@ import org.example.bdd.PerformUserInput;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
 public class PerformUserInputStepDef {
     private Equipment equipment;
@@ -41,5 +43,15 @@ public class PerformUserInputStepDef {
     public void checkIsLetterInWord(String strRes){
         Boolean expResult = strRes.equals("да");
         assertEquals(expResult, PerformUserInput.isLetterInWord(equipment, userInput));
+    }
+
+    @Тогда("^алфавит должен стать (.*)")
+    public void removeAlphabetLetter(String strAlphabet) {
+        ArrayList<Character> expAlphabet = new ArrayList<>();
+        for (char c : strAlphabet.toCharArray()) expAlphabet.add(c);
+
+        equipment = PerformUserInput.removeLetterFromAlphabet(equipment, userInput);
+        assert equipment != null;
+        assertIterableEquals(expAlphabet, equipment.alphabet);
     }
 }
