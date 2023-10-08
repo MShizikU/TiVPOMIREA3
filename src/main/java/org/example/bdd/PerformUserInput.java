@@ -9,6 +9,11 @@ import org.example.Equipment;
  */
 public class PerformUserInput {
     public static Boolean isLetterInWord(Equipment equipment, Character userInput){
+        for (int i = 0; i < equipment.hiddenWord.size(); i++){
+            if (equipment.hiddenWord.get(i).equals(userInput)){
+                return true;
+            }
+        }
         return null;
     }
 
