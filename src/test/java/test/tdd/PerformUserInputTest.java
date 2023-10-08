@@ -162,7 +162,7 @@ class PerformUserInputTest {
     @Test
     void testUpdateUserWordFirst(){
 
-        basicEquipment.hiddenWord.add('к');
+        basicEquipment.hiddenWord.add('м');
         basicEquipment.hiddenWord.add('о');
         basicEquipment.hiddenWord.add('ш');
         basicEquipment.hiddenWord.add('к');
