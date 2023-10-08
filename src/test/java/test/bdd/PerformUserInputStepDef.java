@@ -35,7 +35,7 @@ public class PerformUserInputStepDef {
         for (int i = 1072; i <= 1103; i++) equipment.alphabet.add( (char) i );
     }
 
-    @И("^алфавит (.*)")
+    @И("^текущий алфавит (.*)")
     public void createExistedAlphabet(String alphabet) {
         equipment.alphabet = new ArrayList<>();
 
