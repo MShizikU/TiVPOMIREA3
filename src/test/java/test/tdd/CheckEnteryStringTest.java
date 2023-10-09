@@ -36,4 +36,13 @@ public class CheckEnteryStringTest {
         Boolean isInAlphabet = CheckEnteryString.inAlphabet(basicEquipment, userInput);
         assertEquals(false, isInAlphabet);
     }
+    
+    @Test
+    void testToLower(){
+        Character userInput = 'A';
+        Equipment newEquipment = CheckEnteryString.toLower(basicEquipment, userInput);
+        Character newEquipmentLetter = newEquipment.userWord.get(newEquipment.userWord.size() - 1);
+        Character equipmentLetter = 'a';
+        assertEquals(equipmentLetter, newEquipmentLetter);
+    }
 }
