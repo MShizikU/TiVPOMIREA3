@@ -21,7 +21,7 @@ public class CheckEnteryStringTest {
         basicEquipment.hiddenWord = new ArrayList<>();
         basicEquipment.userWord = new ArrayList<>();
 
-        for (int i = 1072; i <= 1103; i++) basicEquipment.alphabet.add( (char) i );
+        for (int i = 1073; i <= 1103; i++) basicEquipment.alphabet.add( (char) i );
     }
     @Test
     void testIsLetter(){
@@ -29,5 +29,11 @@ public class CheckEnteryStringTest {
         Boolean isLetter = CheckEnteryString.isLetter(basicEquipment, userInput);
         assertEquals(false, isLetter);
     }
-    
+
+    @Test
+    void testInAlphabet(){
+        Character userInput = 'а';
+        Boolean isInAlphabet = CheckEnteryString.inAlphabet(basicEquipment, userInput);
+        assertEquals(false, isInAlphabet);
+    }
 }
