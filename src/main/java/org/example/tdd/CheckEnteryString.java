@@ -9,6 +9,9 @@ import org.example.Equipment;
 
 public class CheckEnteryString {
     public static boolean inAlphabet(Equipment equipment, Character userInput){
+        if(equipment.alphabet.contains(userInput)){
+               return true;
+           } 
         return false;
     }
     public static boolean isLetter(Equipment equipment, Character userInput){
