@@ -15,9 +15,9 @@ public class CheckEnteryString {
         return false;
     }
     public static boolean isLetter(Equipment equipment, Character userInput){
-        if (!Character.isAlphabetic(userInput))
-            return false;
-        return true;
+        if (userInput >= (char)1072 || userInput <= (char)1103)
+            return true;
+        return false;
     }
     public static Equipment toLower(Equipment equipment, Character userInput){
         Character lowerLetter = Character.toLowerCase(userInput);
