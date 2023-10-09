@@ -27,6 +27,12 @@ public class PerformUserInput {
     }
 
     public static Equipment updateUserWord(Equipment equipment, Character userInput){
-        return null;
+        for (int i = 0; i < equipment.hiddenWord.size(); i++){
+            if (equipment.hiddenWord.get(i).equals(userInput)){
+                equipment.userWord.set(i, userInput);
+                break;
+            }
+        }
+        return equipment;
     }
 }
