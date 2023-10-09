@@ -52,4 +52,13 @@ public class CheckEnteryStringTest {
         Boolean isLetter = CheckEnteryString.isLetter(basicEquipment, userInput);
         assertEquals(false, isLetter);
     }
+
+    @Test
+    void testLowerLetterToLower(){
+        Character userInput = 'б';
+        Equipment newEquipment = CheckEnteryString.toLower(basicEquipment, userInput);
+        Character newEquipmentLetter = newEquipment.userWord.get(newEquipment.userWord.size() - 1);
+        Character equipmentLetter = 'б';
+        assertEquals(equipmentLetter, newEquipmentLetter);
+    }
 }
