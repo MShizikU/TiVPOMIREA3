@@ -39,11 +39,10 @@ public class CheckEnteryStringTest {
     
     @Test
     void testToLower(){
-        Character userInput = 'A';
-        Equipment newEquipment = CheckEnteryString.toLower(basicEquipment, userInput);
-        Character newEquipmentLetter = newEquipment.userWord.get(newEquipment.userWord.size() - 1);
-        Character equipmentLetter = 'a';
-        assertEquals(equipmentLetter, newEquipmentLetter);
+        Character userInput = 'А';
+        Character newCharacter = CheckEnteryString.toLower(basicEquipment, userInput);
+        Character equipmentLetter = 'а';
+        assertEquals(equipmentLetter, newCharacter);
     }
 
     @Test
@@ -56,10 +55,9 @@ public class CheckEnteryStringTest {
     @Test
     void testLowerLetterToLower(){
         Character userInput = 'б';
-        Equipment newEquipment = CheckEnteryString.toLower(basicEquipment, userInput);
-        Character newEquipmentLetter = newEquipment.userWord.get(newEquipment.userWord.size() - 1);
+        Character newCharacter = CheckEnteryString.toLower(basicEquipment, userInput);
         Character equipmentLetter = 'б';
-        assertEquals(equipmentLetter, newEquipmentLetter);
+        assertEquals(equipmentLetter, newCharacter);
     }
 
     @Test
