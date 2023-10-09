@@ -45,4 +45,11 @@ public class CheckEnteryStringTest {
         Character equipmentLetter = 'a';
         assertEquals(equipmentLetter, newEquipmentLetter);
     }
+
+    @Test
+    void testDashIsLetter(){
+        Character userInput = '-';
+        Boolean isLetter = CheckEnteryString.isLetter(basicEquipment, userInput);
+        assertEquals(false, isLetter);
+    }
 }
