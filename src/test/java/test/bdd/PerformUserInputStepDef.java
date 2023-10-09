@@ -42,6 +42,13 @@ public class PerformUserInputStepDef {
         for (char c : alphabet.toCharArray()) equipment.alphabet.add(c);
     }
 
+    @И("^текущее отгаданное слово (.*)")
+    public void createUserWord(String userWord){
+        equipment.userWord = new ArrayList<>();
+
+        for (char c : userWord.toCharArray()) equipment.userWord.add(c);
+    }
+
 
     @Когда("^пользователь вводит букву (.)")
     public void givenInput(Character userInput){
@@ -62,5 +69,15 @@ public class PerformUserInputStepDef {
         equipment = PerformUserInput.removeLetterFromAlphabet(equipment, userInput);
         assert equipment != null;
         assertIterableEquals(expAlphabet, equipment.alphabet);
+    }
+
+    @Тогда("^отгаданное слово должно стать (.*)")
+    public void performUserWordUpdate(String strUserWord){
+        ArrayList<Character> expUserWord = new ArrayList<>();
+        for (char c : strUserWord.toCharArray()) expUserWord.add(c);
+
+        equipment = PerformUserInput.updateUserWord(equipment, userInput);
+        assert equipment != null;
+        assertIterableEquals(expUserWord, equipment.userWord);
     }
 }
