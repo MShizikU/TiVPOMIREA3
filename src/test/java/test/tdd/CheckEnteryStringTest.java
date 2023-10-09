@@ -23,5 +23,11 @@ public class CheckEnteryStringTest {
 
         for (int i = 1072; i <= 1103; i++) basicEquipment.alphabet.add( (char) i );
     }
+    @Test
+    void testIsLetter(){
+        Character userInput = '0';
+        Boolean isLetter = CheckEnteryString.isLetter(basicEquipment, userInput);
+        assertEquals(false, isLetter);
+    }
     
 }
