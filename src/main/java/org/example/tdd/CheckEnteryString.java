@@ -20,6 +20,9 @@ public class CheckEnteryString {
         return true;
     }
     public static Equipment toLower(Equipment equipment, Character userInput){
+        Character lowerLetter = Character.toLowerCase(userInput);
+        int sizeOfUserWord = equipment.userWord.size();
+        equipment.userWord.add(sizeOfUserWord, lowerLetter);
         return equipment;
     }
 }
