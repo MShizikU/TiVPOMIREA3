@@ -68,4 +68,11 @@ public class CheckEnteryStringTest {
         Boolean isInAlphabet = CheckEnteryString.inAlphabet(basicEquipment, userInput);
         assertEquals(true, isInAlphabet);
     }
+
+    @Test
+    void testEnglishLetterIsLetter(){
+        Character userInput = 'b';
+        Boolean isLetter = CheckEnteryString.isLetter(basicEquipment, userInput);
+        assertEquals(false, isLetter);
+    }
 }
