@@ -48,7 +48,7 @@ public class PoleChudes {
     }
 
     public static void main(String[] args) throws IOException {
-        PoleChudes game = new PoleChudes("words.txt");
+        PoleChudes game = new PoleChudes("../../resources/words.txt.txt");
         String chosenWord = game.chooseWord();
         System.out.println(chosenWord);
         chosenWord = game.chooseWordFromCategory("города");
