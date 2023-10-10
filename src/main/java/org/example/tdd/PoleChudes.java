@@ -1,5 +1,7 @@
 package org.example.tdd;
 
+import org.example.Equipment;
+
 import java.util.*;
 import java.nio.file.*;
 import java.io.IOException;
@@ -9,10 +11,13 @@ public class PoleChudes {
     private Map<String, List<String>> categories = new HashMap<>();
     private String currentWord;
     private Random random;
+    private Equipment equipment;
 
-    public PoleChudes(String filename) throws IOException {
+    public PoleChudes(String filename, Equipment equipment) throws IOException {
+        this.equipment = equipment;
         random = new Random();
         loadWordsFromFile(filename);
+        equipment.setAlphabet();  // Устанавливаем алфавит в equipment
     }
 
     private void loadWordsFromFile(String filename) throws IOException {
@@ -35,6 +40,7 @@ public class PoleChudes {
             allWords.addAll(categoryWords);
         }
         currentWord = allWords.get(random.nextInt(allWords.size()));
+        equipment.setHiddenWord(currentWord); // Устанавливаем слово в equipment
         return currentWord;
     }
 
@@ -42,18 +48,18 @@ public class PoleChudes {
         if (categories.containsKey(category)) {
             List<String> categoryWords = categories.get(category);
             currentWord = categoryWords.get(random.nextInt(categoryWords.size()));
+            equipment.setHiddenWord(currentWord); // Устанавливаем слово в equipment
             return currentWord;
         }
         return null;
     }
 
     public static void main(String[] args) throws IOException {
-        PoleChudes game = new PoleChudes("../../resources/words.txt.txt");
+        Equipment equipment = new Equipment();
+        org.example.bdd.PoleChudes game = new org.example.bdd.PoleChudes("../../resources/words.txt.txt", equipment);
         String chosenWord = game.chooseWord();
         System.out.println(chosenWord);
         chosenWord = game.chooseWordFromCategory("города");
         System.out.println(chosenWord);
     }
 }
-
-
