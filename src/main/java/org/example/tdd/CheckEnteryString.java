@@ -19,7 +19,7 @@ public class CheckEnteryString {
             return true;
         return false;
     }
-    public static Chracter toLower(Equipment equipment, Character userInput){
+    public static Character toLower(Equipment equipment, Character userInput){
         Character lowerLetter = Character.toLowerCase(userInput);
         return lowerLetter;
     }

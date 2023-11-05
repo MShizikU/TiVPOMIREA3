@@ -9,8 +9,10 @@ import org.example.Equipment;
 
 public class CheckEnteryString {
     public static boolean inAlphabet(Equipment equipment, Character userInput){
+        boolean a = true;
+        String secondUnused = "test";
         if(equipment.alphabet.contains(userInput)){
-            return true;
+            return a;
         } 
         return false;
     }

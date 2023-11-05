@@ -3,6 +3,7 @@ package test.tdd;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.example.Equipment;
+import org.example.tdd.CheckEnteryString;
 import org.example.tdd.PerformUserInput;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
